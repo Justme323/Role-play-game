@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roleplay Challenge Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .box {
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .result {
+      font-size: 18px;
+      margin-top: 20px;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Roleplay Challenge</h1>
+  <div class="box">
+    <button onclick="generateChallenge()">Get a New Challenge</button>
+    <div class="result" id="role"></div>
+    <div class="result" id="scenario"></div>
+  </div>
+
+  <script>
+    const roles = [
+      "Tourist", "Waiter/Waitress", "Customer", "Police officer", "Doctor",
+      "Student", "Teacher", "Interviewer", "Celebrity", "Parent",
+      "Gamer", "YouTuber", "Coach", "Best friend", "Stranger"
+    ];
+
+    const scenarios = [
+      "At a restaurant", "At the airport", "Asking for directions", "First day at a new school",
+      "Lost in a foreign country", "On a first date", "In a job interview", "During a video game live stream",
+      "Buying something expensive", "On a school trip abroad", "Talking to a famous person",
+      "Arguing about something silly", "Making weekend plans", "Ordering food online", "Apologizing for being late"
+    ];
+
+    function generateChallenge() {
+      const role = roles[Math.floor(Math.random() * roles.length)];
+      const scenario = scenarios[Math.floor(Math.random() * scenarios.length)];
+
+      document.getElementById("role").textContent = `Role: ${role}`;
+      document.getElementById("scenario").textContent = `Scenario: ${scenario}`;
+    }
+  </script>
+</body>
+</html>
